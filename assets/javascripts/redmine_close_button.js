@@ -1,5 +1,5 @@
 (function() {
-	var ID_CLOSED = 5, ID_REJECTED = 6;
+	var ID_CLOSED = 13, ID_REJECTED = 34;
 	if (window.jQuery) {
 		// redmine uses jQuery so use it.
 		jQuery(document).ready(function() {
@@ -9,7 +9,7 @@
 				return;
 			}
 			var options = s.get(0).childNodes;
-			var needCloseButton = false;
+			var needCloseButton = true;
 			for (var i = options.length - 1; i >= 0; i--) {
 				var option = options[i];
 				var v = parseInt(option.value, 10);
@@ -23,9 +23,9 @@
 					if (option.selected) {
 						needCloseButton = false;
 						break;
-					} else {
+					}/* else {
 						needCloseButton = true;
-					}
+					}*/
 				}
 			}
 			if (!needCloseButton) {
